@@ -1,5 +1,6 @@
 import { PokemonDTO } from '@/entities/pokemon'
 import { PokemonRepository } from '@/use-cases/pokemon/ports'
+import { randomUUID } from 'crypto'
 
 export class InMemoryPokemonRepository implements PokemonRepository {
   private repository: PokemonDTO[]
@@ -12,6 +13,8 @@ export class InMemoryPokemonRepository implements PokemonRepository {
     const exists = await this.exists(pokemon)
 
     if (!exists) {
+      pokemon.id = randomUUID()
+
       this.repository.push(pokemon)
     }
 
