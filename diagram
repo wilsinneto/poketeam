@@ -1,0 +1,6 @@
+pokemon entity:
+id
+teamId
+name
+imageUrl
+specie
