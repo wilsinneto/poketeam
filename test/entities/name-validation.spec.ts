@@ -16,8 +16,8 @@ describe('Name validation', () => {
     expect(Name.validate(name)).toBeFalsy()
   })
 
-  test('should not accept name larger than 257 chars', () => {
-    const name: string = 'l'.repeat(257)
+  test('should not accept name larger than 120 chars', () => {
+    const name: string = 'l'.repeat(121)
     expect(Name.validate(name)).toBeFalsy()
   })
 
