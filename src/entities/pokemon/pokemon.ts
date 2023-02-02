@@ -1,6 +1,7 @@
 import { InvalidNameError, InvalidSpecieError } from '@/entities/errors'
 import { Name, PokemonDTO, Specie } from '@/entities/pokemon'
 import { Either, left, right } from '@/shared'
+import { randomUUID } from 'crypto'
 
 export class Pokemon {
   public readonly id?: string | undefined
@@ -9,7 +10,8 @@ export class Pokemon {
   public readonly imageUrl?: string | undefined
   public readonly specie: Specie
 
-  private constructor (teamId: string, name: Name, imageUrl: string, specie: Specie) {
+  private constructor (id: string, teamId: string, name: Name, imageUrl: string, specie: Specie) {
+    this.id = id || randomUUID()
     this.teamId = teamId
     this.name = name
     this.imageUrl = imageUrl
@@ -30,6 +32,6 @@ export class Pokemon {
     const name: Name = nameOrError.value as Name
     const specie: Specie = specieOrError.value as Specie
 
-    return right(new Pokemon(pokemon.teamId, name, pokemon.imageUrl, specie))
+    return right(new Pokemon(pokemon.id, pokemon.teamId, name, pokemon.imageUrl, specie))
   }
 }

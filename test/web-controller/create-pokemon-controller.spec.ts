@@ -25,7 +25,6 @@ describe('Create pokemon web controller', () => {
   test('should return status code 201 when request contains valid pokemon data', async () => {
     const request: HttpRequest = {
       body: {
-        id: '',
         teamId: '',
         name: 'Any name',
         imageUrl: '',
@@ -36,13 +35,12 @@ describe('Create pokemon web controller', () => {
     const response: HttpResponse = await controller.handle(request)
 
     expect(response.statusCode).toEqual(201)
-    expect(response.body).toEqual({ id: '', teamId: '', name: 'Any name', imageUrl: '', specie: 'any_specie' })
+    expect(response.body).toEqual({ id: response.body.id, teamId: '', name: 'Any name', imageUrl: '', specie: 'any_specie' })
   })
 
   test('should return status code 400 when request contains invalid pokemon name', async () => {
     const requestWithInvalidName: HttpRequest = {
       body: {
-        id: '',
         teamId: '',
         name: 'A',
         imageUrl: '',
@@ -59,7 +57,6 @@ describe('Create pokemon web controller', () => {
   test('should return status code 400 when request contains invalid pokemon specie', async () => {
     const requestWithInvalidSpecie: HttpRequest = {
       body: {
-        id: '',
         teamId: '',
         name: 'Any name',
         imageUrl: '',
@@ -77,7 +74,6 @@ describe('Create pokemon web controller', () => {
   test('should return status code 400 when request is missing pokemon name', async () => {
     const requestWithMissingName: HttpRequest = {
       body: {
-        id: '',
         teamId: '',
         imageUrl: '',
         specie: 'any_specie',
@@ -94,7 +90,6 @@ describe('Create pokemon web controller', () => {
   test('should return status code 400 when request is missing pokemon specie', async () => {
     const requestWithMissingEmail: HttpRequest = {
       body: {
-        id: '',
         teamId: '',
         name: 'Any name',
         imageUrl: '',
@@ -111,7 +106,6 @@ describe('Create pokemon web controller', () => {
   test('should return status code 400 when request is missing pokemon name and email', async () => {
     const requestWithMissingNameAndEmail: HttpRequest = {
       body: {
-        id: '',
         teamId: '',
         imageUrl: '',
       }
@@ -127,7 +121,6 @@ describe('Create pokemon web controller', () => {
   test('should return status code 500 when server raises', async () => {
     const request: HttpRequest = {
       body: {
-        id: '',
         teamId: '',
         name: 'Any name',
         imageUrl: '',

@@ -16,7 +16,7 @@ describe('In memory Pokemon repository', () => {
     const specie = 'abc'
     const sut = new InMemoryPokemonRepository(pokemons)
 
-    await sut.add({ id: '', teamId: '', name, imageUrl, specie })
+    await sut.add({ teamId: '', name, imageUrl, specie })
     const pokemon = await sut.findPokemonByName('any_name')
 
     expect(pokemon.name).toBe('any_name')
@@ -24,8 +24,8 @@ describe('In memory Pokemon repository', () => {
 
   test('should return all pokemons in the repository', async () => {
     const pokemons: PokemonDTO[] = [
-      { id: '', teamId: '', name: 'any_name', specie: 'any', imageUrl: 'http://image.png' },
-      { id: '', teamId: '', name: 'second_name', specie: 'second', imageUrl: 'http://image2.png' }
+      { teamId: '', name: 'any_name', specie: 'any', imageUrl: 'http://image.png' },
+      { teamId: '', name: 'second_name', specie: 'second', imageUrl: 'http://image2.png' }
     ]
 
     const sut = new InMemoryPokemonRepository(pokemons)

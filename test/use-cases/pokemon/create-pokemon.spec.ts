@@ -11,7 +11,7 @@ describe('Create pokemon use case', () => {
     const name = 'any_name'
     const specie = 'any specie'
 
-    const response = await useCase.perform({ id: '', teamId: '', name, imageUrl: '', specie })
+    const response = await useCase.perform({ teamId: '', name, imageUrl: '', specie })
     const pokemon = repository.findPokemonByName('any_name')
 
     expect((await pokemon).name).toBe('any_name')
@@ -25,8 +25,8 @@ describe('Create pokemon use case', () => {
     const name = 'any_name'
     const specie = 'any specie'
 
-    await useCase.perform({ id: '', teamId: '', name, imageUrl: '', specie })
-    await useCase.perform({ id: '', teamId: '', name, imageUrl: '', specie })
+    await useCase.perform({ teamId: '', name, imageUrl: '', specie })
+    await useCase.perform({ teamId: '', name, imageUrl: '', specie })
     
     const pokemonList = await repository.findAllPokemons()
 
@@ -40,7 +40,7 @@ describe('Create pokemon use case', () => {
     const name = 'any_name'
     const invalidSpecie = ''
 
-    const response = (await useCase.perform({ id: '', teamId: '', name, imageUrl: '', specie: invalidSpecie, })).value as Error
+    const response = (await useCase.perform({ teamId: '', name, imageUrl: '', specie: invalidSpecie, })).value as Error
     const pokemon = await repository.findPokemonByName(name)
 
     expect(pokemon).toBeNull()
@@ -54,7 +54,7 @@ describe('Create pokemon use case', () => {
     const invalidName = ''
     const specie = 'any_specie'
 
-    const response = (await useCase.perform({ id: '', teamId: '', name: invalidName, imageUrl: '', specie  })).value as Error
+    const response = (await useCase.perform({ teamId: '', name: invalidName, imageUrl: '', specie  })).value as Error
     const pokemon = await repository.findPokemonByName(invalidName)
 
     expect(pokemon).toBeNull()

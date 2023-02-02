@@ -10,7 +10,6 @@ describe('Register create pokemon route', () => {
     await request(app)
       .post('/api/create-pokemon')
       .send({
-        id: '',
         teamId: '',
         name: 'Any name',
         imageUrl: '',

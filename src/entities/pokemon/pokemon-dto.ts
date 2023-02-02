@@ -1,7 +1,7 @@
 export interface PokemonDTO {
-  id: string,
-  teamId: string,
+  id?: string | undefined,
+  teamId?: string | undefined,
   name: string,
-  imageUrl: string,
+  imageUrl?: string | undefined,
   specie: string
 }
