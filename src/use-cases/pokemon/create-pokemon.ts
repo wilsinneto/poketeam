@@ -15,10 +15,10 @@ export class CreatePokemon implements UseCase {
 
   public async perform (request: PokemonDTO):
     Promise<Either<InvalidNameError | InvalidSpecieError, PokemonDTO>> {
-    const userOrError: Either<InvalidNameError | InvalidSpecieError, Pokemon> = Pokemon.create(request)
+    const pokemonOrError: Either<InvalidNameError | InvalidSpecieError, Pokemon> = Pokemon.create(request)
 
-    if (userOrError.isLeft()) {
-      return left(userOrError.value)
+    if (pokemonOrError.isLeft()) {
+      return left(pokemonOrError.value)
     }
 
     const isExists = await this.pokemonRepository.findPokemonByName(request.name)

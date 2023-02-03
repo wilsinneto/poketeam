@@ -20,8 +20,8 @@ export class CreatePokemonController {
         return badRequest(new MissingParamError(missingParam.trim()))
       }
 
-      const userData: PokemonDTO = request.body
-      const response = await this.useCase.perform(userData)
+      const pokemonData: PokemonDTO = request.body
+      const response = await this.useCase.perform(pokemonData)
 
       if (response.isLeft()) {
         return badRequest(response.value)
