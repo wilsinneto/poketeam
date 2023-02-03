@@ -21,14 +21,14 @@ export class CreatePokemon implements UseCase {
       return left(pokemonOrError.value)
     }
 
-    const isExists = await this.pokemonRepository.findPokemonByName(request.name)
+    const pokemonOrNull = await this.pokemonRepository.findPokemonByName(request.name)
 
-    if (!isExists) {
+    if (!pokemonOrNull) {
       const newPokemon = await this.pokemonRepository.add(request)
 
       return right(newPokemon)
     }
 
-    return right(isExists)
+    return right(pokemonOrNull)
   }
 }
