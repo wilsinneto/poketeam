@@ -10,6 +10,20 @@ export class InMemoryPokemonTeamRepository implements PokemonTeamRepository {
     this.repository = repository
   }
 
+  async findPokemonTeamById(id: string): Promise<boolean> {
+    const pokemon = this.repository.find(pokemon => pokemon.id === id)
+
+    return pokemon ? true : false
+  }
+
+  async remove (id: string): Promise<boolean> {
+    const index = this.repository.findIndex(pokemon => pokemon.id === id)
+
+    this.repository.splice(index, 1)
+
+    return true
+  }
+
   async specieAlreadyExist(pokemons: PokemonDTO[]): Promise<boolean> {
     let alreadyExist = false
 
