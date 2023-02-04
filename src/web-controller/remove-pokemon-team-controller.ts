@@ -13,13 +13,13 @@ export class RemovePokemonTeamController {
 
   public async handle (request: HttpRequest): Promise<HttpResponse> {
     try {
-      if (!request.body.id) {
-        const missingParam = !(request.body.id) ? 'id' : ''
+      if (!request.params.id) {
+        const missingParam = !(request.params.id) ? 'id' : ''
 
         return badRequest(new MissingParamError(missingParam.trim()))
       }
 
-      const removePokemonTeamData: RemovePokemonTeamDTO = request.body
+      const removePokemonTeamData: RemovePokemonTeamDTO = request.params
       const response = await this.useCase.perform(removePokemonTeamData)
 
       if (response.isLeft()) {

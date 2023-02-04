@@ -3,5 +3,5 @@ import { makeRemovePokemonTeamController } from '@/main/factories/remove-pokemon
 import { Router } from 'express'
 
 export default (router: Router): void => {
-  router.post('/remove-pokemon-team', adaptRegisterRemovePokemonTeamRoute(makeRemovePokemonTeamController()))
+  router.post('/remove-pokemon-team/:id', adaptRegisterRemovePokemonTeamRoute(makeRemovePokemonTeamController()))
 }
