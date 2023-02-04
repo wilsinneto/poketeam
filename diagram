@@ -1,6 +1,11 @@
 pokemon entity:
-id
-teamId
-name
-imageUrl
-specie
+  id: string
+  teamId: string
+  name: string
+  imageUrl: string
+  specie: string
+
+pokemon team entity:
+  id: string
+  name: string
+  pokemons: pokemon[]
