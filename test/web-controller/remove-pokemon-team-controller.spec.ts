@@ -37,7 +37,8 @@ describe('Remove pokemon team web controller', () => {
     const responseCreatePokemonTeam: HttpResponse = await createController.handle(requestCreatePokemonTeam)
 
     const requestRemovePokemonTeam: HttpRequest = {
-      body: {
+      body: {},
+      params: {
         id: responseCreatePokemonTeam.body.id
       }
     }
@@ -50,7 +51,8 @@ describe('Remove pokemon team web controller', () => {
 
   test('should return status code 400 when request not found pokemon team by id', async () => {
     const requestWithMissingId: HttpRequest = {
-      body: {
+      body: {},
+      params: {
         id: 'id'
       }
     }
@@ -63,7 +65,8 @@ describe('Remove pokemon team web controller', () => {
 
   test('should return status code 400 when request is missing pokemon team id', async () => {
     const requestWithMissingId: HttpRequest = {
-      body: {}
+      body: {},
+      params: {}
     }
 
     const response: HttpResponse = await removeController.handle(requestWithMissingId)
