@@ -15,7 +15,7 @@ describe('Register remove pokemon team route', () => {
       })
 
     await request(app)
-      .post('/api/remove-pokemon-team/' + response.body.id)
+      .delete('/api/remove-pokemon-team/' + response.body.id)
       .expect(200)
   })
 })
