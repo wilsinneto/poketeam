@@ -12,7 +12,7 @@ describe('Pokemon Team domain entity', () => {
   })
 
   test('should not create pokemon with invalid name (too many characters)', () => {
-    const invalidName = 'O'.repeat(121)
+    const invalidName = 'O'.repeat(151)
     const error = PokemonTeam.create({ name: invalidName, pokemons: [] })
     expect(error).toEqual(left(new InvalidNameError(invalidName)))
   })
