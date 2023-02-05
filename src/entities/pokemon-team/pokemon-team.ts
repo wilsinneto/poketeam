@@ -1,8 +1,9 @@
-import { InvalidNameError } from '@/entities/errors'
-import { Name, PokemonDTO } from '@/entities/pokemon'
-import { Either, left, right } from '@/shared'
-import { randomUUID } from 'crypto'
-import { PokemonTeamDTO } from './pokemon-team-dto'
+import { InvalidNameError } from '@/entities/errors';
+import { PokemonDTO } from '@/entities/pokemon';
+import { Name } from '@/entities/pokemon-team';
+import { Either, left, right } from '@/shared';
+import { randomUUID } from 'crypto';
+import { PokemonTeamDTO } from './pokemon-team-dto';
 
 export class PokemonTeam {
   public readonly id?: string | undefined
