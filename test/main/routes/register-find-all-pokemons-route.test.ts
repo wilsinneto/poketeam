@@ -8,7 +8,7 @@ describe('Find all pokemons route', () => {
       res.send()
     })
     await request(app)
-      .post('/api/find-all-pokemons')
+      .get('/api/find-all-pokemons')
       .expect(200)
   })
 })
