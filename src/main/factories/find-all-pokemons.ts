@@ -1,7 +1,7 @@
 import { SQLitePokemonRepository } from '@/external/repositories/sqlite'
 import { prisma } from '@/external/repositories/sqlite/helper'
-import { FindAllPokemons } from '@/use-cases/pokemon/find-all-pokemons'
-import { FindAllPokemonsController } from '@/web-controller/find-all-pokemons-controller'
+import { FindAllPokemons } from '@/use-cases/pokemon'
+import { FindAllPokemonsController } from '@/web-controller'
 
 export const makeFindAllPokemonsController = (): FindAllPokemonsController => {
   const sqlitePokemonRepository = new SQLitePokemonRepository(prisma)

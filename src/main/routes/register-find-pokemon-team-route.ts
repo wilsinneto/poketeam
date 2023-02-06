@@ -1,4 +1,4 @@
-import { adaptRegisterFindPokemonTeamRoute } from '@/main/adapters/express-register-find-pokemon-team-route-adapter'
+import { adaptRegisterFindPokemonTeamRoute } from '@/main/adapters'
 import { makeFindPokemonTeamController } from '@/main/factories/find-pokemon-team'
 import { Router } from 'express'
 
