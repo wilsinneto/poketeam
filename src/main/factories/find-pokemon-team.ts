@@ -1,10 +1,10 @@
-import { pokemonTeam } from '@/main/database/in-memory'
+import { SQLitePokemonTeamRepository } from '@/external/repositories/sqlite'
+import { prisma } from '@/external/repositories/sqlite/helper'
 import { FindPokemonTeam } from '@/use-cases/pokemon-team/find-pokemon-team'
-import { InMemoryPokemonTeamRepository } from '@/use-cases/pokemon-team/repository'
 import { FindPokemonTeamController } from '@/web-controller/find-pokemon-team-controller'
 
 export const makeFindPokemonTeamController = (): FindPokemonTeamController => {
-  const inMemoryPokemonTeamRepository = new InMemoryPokemonTeamRepository(pokemonTeam)
+  const inMemoryPokemonTeamRepository = new SQLitePokemonTeamRepository(prisma)
   const findPokemonTeamUseCase = new FindPokemonTeam(inMemoryPokemonTeamRepository)
   const findPokemonTeamController = new FindPokemonTeamController(findPokemonTeamUseCase)
 
