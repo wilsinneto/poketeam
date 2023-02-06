@@ -8,6 +8,9 @@
     "start": "npm run build && node dist/main/server.js",
     "start:docker": "docker-compose up --build",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "test:verbose": "jest --passWithNoTests --runInBand",
+    "test:unit": "npm test -- --watch -c jest-unit-config.js",
+    "test:integration": "npm test -- --watch -c jest-integration-config.js",
     "test:ci": "npm test -- --coverage"
   },
   "keywords": [],
