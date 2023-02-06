@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "build": "rimraf dist && tsc -p tsconfig-build.json",
-    "start": "npm run build && node dist/main/server.js"
+    "start": "npm run build && node dist/main/server.js",
+    "test:ci": "npm test -- --coverage"
   },
   "keywords": [],
   "author": "",
