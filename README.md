@@ -5,11 +5,7 @@
 npm install
 ```
 
-### Start application with or without docker 
+### Start application
 ```
 npm start
-```
-or
-```
-npm run start:docker
 ```
