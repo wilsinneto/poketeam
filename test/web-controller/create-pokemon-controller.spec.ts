@@ -4,7 +4,7 @@ import { CreatePokemon } from '@/use-cases/pokemon'
 import { PokemonRepository } from '@/use-cases/pokemon/ports'
 import { InMemoryPokemonRepository } from '@/use-cases/pokemon/repository'
 import { UseCase } from '@/use-cases/ports'
-import { CreatePokemonController } from '@/web-controller/create-pokemon-controller'
+import { CreatePokemonController } from '@/web-controller'
 import { MissingParamError } from '@/web-controller/errors'
 import { HttpRequest, HttpResponse } from '@/web-controller/ports'
 

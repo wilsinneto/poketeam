@@ -1,12 +1,9 @@
 import { PokemonTeamDTO } from '@/entities/pokemon-team'
-import { CreatePokemonTeam } from '@/use-cases/pokemon-team/create-pokemon-team'
-import { FindAllPokemonTeam } from '@/use-cases/pokemon-team/find-all-pokemon-team'
+import { CreatePokemonTeam, FindAllPokemonTeam } from '@/use-cases/pokemon-team'
 import { PokemonTeamRepository } from '@/use-cases/pokemon-team/ports'
 import { InMemoryPokemonTeamRepository } from '@/use-cases/pokemon-team/repository'
 import { UseCase } from '@/use-cases/ports'
-import { CreatePokemonTeamController } from '@/web-controller/create-pokemon-team-controller'
-import { FindAllPokemonTeamController } from '@/web-controller/find-all-pokemon-team-controller'
-import { FindAllPokemonsController } from '@/web-controller/find-all-pokemons-controller'
+import { CreatePokemonTeamController, FindAllPokemonsController, FindAllPokemonTeamController } from '@/web-controller'
 import { HttpRequest, HttpResponse } from '@/web-controller/ports'
 
 describe('Find all pokemon team web controller', () => {

@@ -1,8 +1,7 @@
 import { PokemonTeamDTO } from '@/entities/pokemon-team'
-import { CreatePokemonTeam } from '@/use-cases/pokemon-team/create-pokemon-team'
+import { CreatePokemonTeam, RemovePokemonTeam } from '@/use-cases/pokemon-team'
 import { PokemonTeamNotFound } from '@/use-cases/pokemon-team/errors/pokemon-team-not-found'
 import { PokemonTeamRepository } from '@/use-cases/pokemon-team/ports'
-import { RemovePokemonTeam } from '@/use-cases/pokemon-team/remove-pokemon-team'
 import { InMemoryPokemonTeamRepository } from '@/use-cases/pokemon-team/repository'
 
 describe('Remove pokemon team use case', () => {

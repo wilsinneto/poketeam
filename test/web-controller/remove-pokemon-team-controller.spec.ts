@@ -1,14 +1,12 @@
 import { PokemonTeamDTO } from '@/entities/pokemon-team'
-import { CreatePokemonTeam } from '@/use-cases/pokemon-team/create-pokemon-team'
-import { PokemonTeamNotFound } from '@/use-cases/pokemon-team/errors/pokemon-team-not-found'
+import { CreatePokemonTeam, RemovePokemonTeam } from '@/use-cases/pokemon-team'
+import { PokemonTeamNotFound } from '@/use-cases/pokemon-team/errors'
 import { PokemonTeamRepository } from '@/use-cases/pokemon-team/ports'
-import { RemovePokemonTeam } from '@/use-cases/pokemon-team/remove-pokemon-team'
 import { InMemoryPokemonTeamRepository } from '@/use-cases/pokemon-team/repository'
 import { UseCase } from '@/use-cases/ports'
-import { CreatePokemonTeamController } from '@/web-controller/create-pokemon-team-controller'
+import { CreatePokemonTeamController, RemovePokemonTeamController } from '@/web-controller'
 import { MissingParamError } from '@/web-controller/errors'
 import { HttpRequest, HttpResponse } from '@/web-controller/ports'
-import { RemovePokemonTeamController } from '@/web-controller/remove-pokemon-team-controller'
 
 describe('Remove pokemon team web controller', () => {
   const pokemonTeam: PokemonTeamDTO[] = []

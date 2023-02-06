@@ -1,6 +1,5 @@
 import { PokemonTeamDTO } from '@/entities/pokemon-team'
-import { CreatePokemonTeam } from '@/use-cases/pokemon-team/create-pokemon-team'
-import { FindPokemonTeam } from '@/use-cases/pokemon-team/find-pokemon-team'
+import { CreatePokemonTeam, FindPokemonTeam } from '@/use-cases/pokemon-team'
 import { PokemonTeamRepository } from '@/use-cases/pokemon-team/ports'
 import { InMemoryPokemonTeamRepository } from '@/use-cases/pokemon-team/repository'
 

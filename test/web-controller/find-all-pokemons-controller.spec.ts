@@ -1,11 +1,9 @@
 import { PokemonDTO } from '@/entities/pokemon'
-import { CreatePokemon } from '@/use-cases/pokemon'
-import { FindAllPokemons } from '@/use-cases/pokemon/find-all-pokemons'
+import { CreatePokemon, FindAllPokemons } from '@/use-cases/pokemon'
 import { PokemonRepository } from '@/use-cases/pokemon/ports'
 import { InMemoryPokemonRepository } from '@/use-cases/pokemon/repository'
 import { UseCase } from '@/use-cases/ports'
-import { CreatePokemonController } from '@/web-controller'
-import { FindAllPokemonsController } from '@/web-controller/find-all-pokemons-controller'
+import { CreatePokemonController, FindAllPokemonsController } from '@/web-controller'
 import { HttpRequest, HttpResponse } from '@/web-controller/ports'
 
 describe('Find all pokemons web controller', () => {

@@ -1,11 +1,11 @@
 import { InvalidNameError } from '@/entities/errors'
 import { PokemonTeamDTO } from '@/entities/pokemon-team'
-import { CreatePokemonTeam } from '@/use-cases/pokemon-team/create-pokemon-team'
+import { CreatePokemonTeam } from '@/use-cases/pokemon-team'
 import { InvalidPokemonsQuantity, InvalidSpecieAlreadyExist } from '@/use-cases/pokemon-team/errors'
 import { PokemonTeamRepository } from '@/use-cases/pokemon-team/ports'
 import { InMemoryPokemonTeamRepository } from '@/use-cases/pokemon-team/repository'
 import { UseCase } from '@/use-cases/ports'
-import { CreatePokemonTeamController } from '@/web-controller/create-pokemon-team-controller'
+import { CreatePokemonTeamController } from '@/web-controller'
 import { MissingParamError } from '@/web-controller/errors'
 import { HttpRequest, HttpResponse } from '@/web-controller/ports'
 

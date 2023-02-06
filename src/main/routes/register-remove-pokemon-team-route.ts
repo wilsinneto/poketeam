@@ -1,4 +1,4 @@
-import { adaptRegisterRemovePokemonTeamRoute } from '@/main/adapters/express-register-remove-pokemon-team-route-adapter'
+import { adaptRegisterRemovePokemonTeamRoute } from '@/main/adapters'
 import { makeRemovePokemonTeamController } from '@/main/factories/remove-pokemon-team'
 import { Router } from 'express'
 
