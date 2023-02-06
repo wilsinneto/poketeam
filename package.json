@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "build": "rimraf dist && tsc -p tsconfig-build.json",
     "start": "npm run build && node dist/main/server.js",
+    "start:docker": "docker-compose up --build",
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:ci": "npm test -- --coverage"
   },
   "keywords": [],
